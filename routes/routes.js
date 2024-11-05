@@ -1,5 +1,5 @@
 const Hapi = require('@hapi/hapi');
-const { addNoteHandler, getAllNotesHandler } = require("../handler/handler");
+const { addNoteHandler, getAllNotesHandler, getNoteByIdHandler} = require("../handler/handler");
 
 const routes = [
     {
@@ -11,6 +11,11 @@ const routes = [
         method: "GET",
         path: "/notes",
         handler: getAllNotesHandler,
+    },
+    {
+        method: "GET",
+        path: "/notes/{id}",
+        handler: getNoteByIdHandler,
     }
 ]
 
