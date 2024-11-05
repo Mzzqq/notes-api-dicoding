@@ -25,7 +25,7 @@ const addNoteHandler = (request, h) => {
                 noteId: id,
             },
         })
-        response.statusCode(201)
+        response.code(201)
         return response
     }
 
@@ -33,8 +33,15 @@ const addNoteHandler = (request, h) => {
         status: 'fail',
         message: 'Catatan gagal ditambahkan',
     })
-    response.statusCode(500)
+    response.code(500)
     return response
 }
 
-module.exports = { addNoteHandler };
+const getAllNotesHandler = () => ({
+    status: 'success',
+    data: {
+        notes
+    }
+})
+
+module.exports = { addNoteHandler, getAllNotesHandler };
