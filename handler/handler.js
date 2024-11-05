@@ -37,4 +37,4 @@ const addNoteHandler = (request, h) => {
     return response
 }
 
-module.exports = addNoteHandler;
+module.exports = { addNoteHandler };
